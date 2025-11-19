@@ -25,7 +25,7 @@ def gaussian_noise(mu, sigma, size=0.5):
 def square_num_plane(lines_num_points,plane_num_points,line_len, plane_width, facade_clip, angle): 
     " Generating simulation plane"
     
-    #Generating road boundary (Eq: ax + by + c = 0, a and c =0, b = 1)
+    #Generating road boundary (Eq: ax + by + c = 0, a and c = 0, b = 1)
     x1 = np.random.uniform(0, line_len, lines_num_points).reshape(-1, 1)
     y1 = np.random.uniform(0,0, lines_num_points).reshape(-1, 1)
     z1 = np.zeros((lines_num_points, 1))
