@@ -25,7 +25,7 @@ def gaussian_noise(mu, sigma, size=0.5):
 def square_num_plane(lines_num_points,plane_num_points,line_len, plane_width, facade_clip, angle): 
     " Generating simulation plane"
     
-    #Generating road boundary
+    #Generating road boundary (Eq: ax + by + c = 0, a and c =0, b = 1)
     x1 = np.random.uniform(0, line_len, lines_num_points).reshape(-1, 1)
     y1 = np.random.uniform(0,0, lines_num_points).reshape(-1, 1)
     z1 = np.zeros((lines_num_points, 1))
@@ -77,11 +77,11 @@ for i in range(0,500):
   length =  round(random.uniform(4, 5), 3) 
   width = round(random.uniform(1.5, 2.5), 3) 
   high= round(random.uniform(0.1, 0.2), 3) 
-  random_num = round(random.uniform(0.013, 0.041), 3) #the proportion of line
+  random_num = round(random.uniform(0.013, 0.041), 3) #the proportion of line point
   angle = np.random.uniform(87, 93)
   
   num= int(round(random_num * (plane_point_num  + plane_point_num  * high), 0))
   produce_plane=square_num_plane(num,plane_point_num ,length, width, high, angle)
 
   locate=os.path.join(root,'plane_cloud_{}.txt'.format(i))
-  np.savetxt(locate, produce_plane, fmt = ['%.6f', '%.6f','%.6f','%.1f'])    #写入文件
+  np.savetxt(locate, produce_plane, fmt = ['%.6f', '%.6f','%.6f','%.1f'])    
