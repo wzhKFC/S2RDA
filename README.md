@@ -7,7 +7,7 @@ conda install pytorch==3.9.12 cudatoolkit=11.5 -c pytorch
 # Usage
 ### **Simulation**  
 
-![Uploading 图片1.png…]()
+![Uploading image1.png…](./doc/image1.png)
 
 To obtain the simulation samples, 
 ```bash
